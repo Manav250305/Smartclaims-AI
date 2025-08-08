@@ -7,4 +7,3 @@ faiss-cpu
 streamlit_app
 numpy
 sentence-transformers
-numpy
