@@ -4,3 +4,8 @@ pydantic
 openai
 PyMuPDF
 faiss-cpu
+streamlit_app
+numpy
+sentence-transformers
+numpy
+sentence-transformers
