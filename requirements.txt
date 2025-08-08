@@ -8,3 +8,4 @@ streamlit_app
 numpy
 sentence-transformers
 langchain-openai
+python-dotenv
