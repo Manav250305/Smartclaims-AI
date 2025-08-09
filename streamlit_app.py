@@ -3,8 +3,6 @@ import json
 import os
 from core import run_pipeline
 
-st.set_page_config(page_title="SmartClaims AI", page_icon="🧠", layout="centered")
-
 st.markdown("## 🧠 SmartClaims AI")
 st.markdown("Upload an insurance policy and enter a natural language query. Get intelligent claim decisions backed by policy clauses.")
 
@@ -26,8 +24,8 @@ if st.button("🚀 Submit Claim"):
 
             st.success("✅ Claim analyzed successfully!")
             
-            parsed_json = json.loads(parsed_query)
-            result_json = json.loads(decision)
+            parsed_json = json.loads(parsed_query) if parsed_query is not None else {}
+            result_json = json.loads(decision) if decision is not None else {}
 
             # Display Decision
             st.markdown("### 🔍 Decision Summary")
