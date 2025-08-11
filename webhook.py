@@ -265,14 +265,14 @@ def internal_error(error):
 
 if __name__ == "__main__":
     # Initialize with default policy if needed
-    default_pdf = (
-        "sample docs/Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf"
-    )
+    default_pdf = "sample docs/Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf"
+    
     try:
         initialize_vector_store(default_pdf, "AROGYA_SANJEEVANI")
         logger.info("Default Arogya Sanjeevani policy loaded successfully")
     except Exception as e:
         logger.warning(f"Could not load default policy: {str(e)}")
-
-    # Run the Flask app
-    app.run(host="0.0.0.0", port=5001, debug=False)
+    
+    # Use Heroku's PORT environment variable
+    port = int(os.environ.get("PORT", 5001))
+    app.run(host="0.0.0.0", port=port, debug=False)
