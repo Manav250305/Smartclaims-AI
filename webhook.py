@@ -94,7 +94,7 @@ def hackrx_run():
 
         # If no PDF provided, use default
         if not pdf_path:
-            pdf_path = "/Users/manav/Documents/SmartClaimsAI/sample docs/Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf"
+            pdf_path = "sample docs/Arogya Sanjeevani Policy - CIN - U10200WB1906GOI001713 1.pdf"
             logger.info("No PDF provided, using default Arogya Sanjeevani policy")
 
         logger.info(f"Processing claim {claim_id}: {raw_query}")
@@ -273,7 +273,8 @@ if __name__ == "__main__":
     except Exception as e:
         logger.warning(f"Could not load default policy: {str(e)}")
     
-    # Use Railway's PORT environment variable (or default to 5001)
+    # Use Heroku's PORT environment variable
     port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port, debug=False)
+
 
