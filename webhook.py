@@ -273,6 +273,7 @@ if __name__ == "__main__":
     except Exception as e:
         logger.warning(f"Could not load default policy: {str(e)}")
     
-    # Use Heroku's PORT environment variable
+    # Use Railway's PORT environment variable (or default to 5001)
     port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port, debug=False)
+
